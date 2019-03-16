@@ -20,10 +20,19 @@ Of course there is a lookup function as well:
 - MYSQL
 
 ### DB Schema
-beacuse this is sucha  simple app - no automated table generation is happening here (feel free to add it as deploy script!)
+beacuse this is such a simple app - no automated table generation is happening here (feel free to add it as deploy script!)
 - id (int) Autoincrement
 - user (text) NOT NULL
-- data (text) NULLABLE -> this will store a JSON string as the version of MariaDB I was using didnt support JSON Objects and its such a simple strucutre.
+- data (text) NULLABLE -> this will store a JSON string as the version of MariaDB I was using didn't support JSON Objects and its such a simple structure.
 
 ### Setup
-Be sure you have a `.env` file in the same directory as the `callsign.py` script. That fille will contain all the proper keys and other uniqure deployment attributes.
+Be sure you have a `.env` file in the same directory as the `callsign.py` script. That file will contain all the proper keys and other unique deployment attributes.
+
+Since its running on an EC2 instance for me:
+- make sure Python Version is good
+- install requiremnts.txt
+- setup .env
+- run  `export $(cat .env | xargs)`
+- check .env was exported properly to env vars
+- then run as daemon `python callsign.py > output.log &`
+- check bot is up and running!
