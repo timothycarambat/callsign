@@ -7,7 +7,7 @@ client = discord.Client()
 TOKEN = os.getenv('TOKEN')
 NAME = os.getenv('NAME')
 conn = pymysql.connect( host = os.getenv('HOST'),
-                        user = os.getenv('USER'),
+                        user = os.getenv('DBUSER'),
                         password = os.getenv('PASSWORD'),
                         db = os.getenv('DATABASE'),
                         charset = 'utf8mb4',

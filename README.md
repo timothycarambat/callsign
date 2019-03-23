@@ -31,8 +31,7 @@ Be sure you have a `.env` file in the same directory as the `callsign.py` script
 Since its running on an EC2 instance for me:
 - make sure Python Version is good
 - install requiremnts.txt
-- setup .env
-- run  `export $(cat .env | xargs)`
+- setup .env or setsup /etc/envrionment on AWS
 - check .env was exported properly to env vars
 - then run as daemon `python callsign.py > output.log &`
 - check bot is up and running!
